@@ -12,6 +12,9 @@ variable "dns_servers" {
   type = "list"
   default = ["10.237.198.254", "10.201.16.29"]
   }
+variable "domain"{
+  default = "pac.lab"
+}
 
 data "vsphere_datacenter" "dc" {
   name = "${var.vsphere_datacenter}"
@@ -33,22 +36,22 @@ data "vsphere_resource_pool" "pool" {
 }
 
 data "vsphere_network" "vlan344" {
-  name          = "siodev_pg_344"
+  name          = "pg_344"
   datacenter_id = "${data.vsphere_datacenter.dc.id}"
 }
 
 data "vsphere_network" "sio_pg1" {
-  name          = "siodev_sio_pg1"
+  name          = "sio_pg1"
   datacenter_id = "${data.vsphere_datacenter.dc.id}"
 }
 
 data "vsphere_network" "sio_pg2" {
-  name          = "siodev_sio_pg2"
+  name          = "sio_pg2"
   datacenter_id = "${data.vsphere_datacenter.dc.id}"
 }
 
 data "vsphere_virtual_machine" "template" {
-  name          = "SIODev_CentOS7_Template"
+  name          = "CentOSTemplate"
   datacenter_id = "${data.vsphere_datacenter.dc.id}"
 }
 
@@ -57,10 +60,10 @@ resource "vsphere_virtual_machine" "GATEWAYvm" {
   name             = "${var.gateway_server_name}"
   resource_pool_id = "${data.vsphere_compute_cluster.cluster.resource_pool_id}"
   datastore_id     = "${data.vsphere_datastore.datastore.id}"
-  num_cpus = 2
-  memory   = 3072
-  guest_id = "${data.vsphere_virtual_machine.template.guest_id}"
-  scsi_type = "${data.vsphere_virtual_machine.template.scsi_type}"
+  num_cpus         = 2
+  memory           = 3072
+  guest_id         = "${data.vsphere_virtual_machine.template.guest_id}"
+  scsi_type        = "${data.vsphere_virtual_machine.template.scsi_type}"
 
   network_interface {
     network_id   = "${data.vsphere_network.vlan344.id}"
@@ -90,7 +93,7 @@ resource "vsphere_virtual_machine" "GATEWAYvm" {
     customize {
       linux_options {
         host_name = "${var.gateway_server_name}"
-        domain    = "pac.lab"
+        domain    = "${var.domain}"
       }
 
      network_interface {

@@ -1,2 +1,2 @@
 # ScaleIO
-ScaleIO Terraform and Ansible files for Lab
+ScaleIO Terraform files for for the Production Cluster in the Lab

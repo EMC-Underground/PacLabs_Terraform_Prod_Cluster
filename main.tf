@@ -19,3 +19,11 @@ module "GATEWAYvm"{
   gateway_server_name     = "${var.gateway_server_name}"
   dns_servers             = ["${var.dns_servers}"]
 }
+
+module "SDSvm1_Disk1"{
+  source                          = "Services/CreateVMDK"
+  vsphere_datacenter              = "${var.vsphere_datacenter}"
+  sdsvm1_disk1_datastore          = "${var.sdsvm1_disk1_datastore}"
+  sdsvm1_disk1_attach_path_name   = "${var.sdsvm1_disk1_attach_path_name}"
+  sdsvm1_disk1_disk_size          = "${var.sdsvm1_disk1_disk_size}"
+}
