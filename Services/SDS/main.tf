@@ -7,15 +7,18 @@ variable "root_password"{}
 variable "server_name"{}
 variable "disk_attach_path"{}
 variable "disk1_datastore"{}
-variable "disk_attach_path1"{}
-variable "disk2_datastore"{}
-variable "disk_attach_path2"{}
-variable "disk3_datastore"{}
-variable "disk_attach_path3"{}
-variable "disk4_datastore"{}
+variable "vsphere_compute_cluster"{
+  default = "Nehalem"}
+variable "vsphere_datacenter"{
+  default = "PacLabs"}
+variable "vsphere_resource_pool"{
+  default = "Nehalem/Resources"
+}
+variable "domain"{
+  default = "pac.lab"}
 
 data "vsphere_datacenter" "dc" {
-  name = "PacLabs"
+  name = "${var.vsphere_datacenter}"
 }
 
 data "vsphere_datastore" "datastore" {
@@ -24,32 +27,32 @@ data "vsphere_datastore" "datastore" {
 }
 
 data "vsphere_compute_cluster" "cluster" {
-  name          = "SIODev"
+  name          = "${var.vsphere_compute_cluster}"
   datacenter_id = "${data.vsphere_datacenter.dc.id}"
 }
 
 data "vsphere_resource_pool" "pool" {
-  name          = "SIODev/Resources"
+  name          = "${var.vsphere_resource_pool}"
   datacenter_id = "${data.vsphere_datacenter.dc.id}"
 }
 
 data "vsphere_network" "vlan344" {
-  name          = "siodev_pg_344"
+  name          = "pg_344"
   datacenter_id = "${data.vsphere_datacenter.dc.id}"
 }
 
 data "vsphere_network" "sio_pg1" {
-  name          = "siodev_sio_pg1"
+  name          = "sio_pg1"
   datacenter_id = "${data.vsphere_datacenter.dc.id}"
 }
 
 data "vsphere_network" "sio_pg2" {
-  name          = "siodev_sio_pg2"
+  name          = "sio_pg2"
   datacenter_id = "${data.vsphere_datacenter.dc.id}"
 }
 
 data "vsphere_virtual_machine" "template" {
-  name          = "SIODev_CentOS7_Template"
+  name          = "CentOSTemplate"
   datacenter_id = "${data.vsphere_datacenter.dc.id}"
 }
 
@@ -93,38 +96,13 @@ resource "vsphere_virtual_machine" "SDSvm" {
     datastore_id    = "${var.disk1_datastore}"
   }
 
-  disk {
-    label           = "disk2"
-    attach          = true
-    path            = "${var.disk_attach_path1}"
-    unit_number     = "3"
-    datastore_id    = "${var.disk2_datastore}"
-  }
-
-  disk {
-    label           = "disk3"
-    attach          = true
-    path            = "${var.disk_attach_path2}"
-    unit_number     = "4"
-    datastore_id    = "${var.disk3_datastore}"
-  }
-
-  disk {
-    label           = "disk4"
-    attach          = true
-    path            = "${var.disk_attach_path3}"
-    unit_number     = "5"
-    datastore_id    = "${var.disk4_datastore}"
-  }
-
-
   clone {
     template_uuid = "${data.vsphere_virtual_machine.template.id}"
 
     customize {
       linux_options {
         host_name = "${var.server_name}"
-        domain    = "pac.lab"
+        domain    = "${var.domain}"
       }
 
      network_interface {

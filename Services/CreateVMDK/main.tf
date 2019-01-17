@@ -1,7 +1,9 @@
 variable "sdsvm1_disk1_attach_path_name"{}
 variable "sdsvm1_disk1_datastore"{}
 variable "sdsvm1_disk1_disk_size"{}
-variable "vsphere_datacenter"{}
+variable "vsphere_datacenter"{
+  default = "PacLabs"
+}
 
 data "vsphere_datacenter" "dc" {
   name = "${var.vsphere_datacenter}"

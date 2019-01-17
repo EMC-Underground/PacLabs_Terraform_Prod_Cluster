@@ -1,20 +1,22 @@
-variable "vsphere_compute_cluster"{}
+variable "vsphere_compute_cluster"{
+  default = "Nehalem"}
 variable "datastore"{}
 variable "ipv4_344" {}
 variable "ipv4_siopg1"{}
 variable "ipv4_siopg2"{}
 variable "root_password"{}
 variable "servers"{}
-variable "vsphere_datacenter"{}
-variable "vsphere_resource_pool"{}
+variable "vsphere_datacenter"{
+  default = "PacLabs"
+}
+variable "vsphere_resource_pool"{
+  default = "Nehalem/Resources"}
 variable "gateway_server_name"{}
 variable "dns_servers" {
   type = "list"
-  default = ["10.237.198.254", "10.201.16.29"]
-  }
+  default = ["10.237.198.254", "10.201.16.29"]}
 variable "domain"{
-  default = "pac.lab"
-}
+  default = "pac.lab"}
 
 data "vsphere_datacenter" "dc" {
   name = "${var.vsphere_datacenter}"
