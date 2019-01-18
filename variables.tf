@@ -37,6 +37,11 @@ variable "sdsvm1_disk3_datastore"{}
 variable "sdsvm1_disk3_attach_path_name"{}
 variable "sdsvm1_disk3_disk_size"{}
 
+# SDSvm1 Disk 4 variables
+variable "sdsvm1_disk4_datastore"{}
+variable "sdsvm1_disk4_attach_path_name"{}
+variable "sdsvm1_disk4_disk_size"{}
+
 
 # SDSvm1 Server variables
 variable "sdsvm1_servers"{}

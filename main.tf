@@ -38,6 +38,13 @@ module "SDSvm1_Disk3"{
   disk_size               = "${var.sdsvm1_disk3_disk_size}"
 }
 
+module "SDSvm1_Disk4"{
+  source                  = "Services/CreateVMDK"
+  disk_datastore          = "${var.sdsvm1_disk4_datastore}"
+  disk_attach_path_name   = "${var.sdsvm1_disk4_attach_path_name}"
+  disk_size               = "${var.sdsvm1_disk4_disk_size}"
+}
+
 module "SDSvm1"{
   source             = "Services/SDS"
   root_password      = "${var.root_password}"
@@ -51,4 +58,8 @@ module "SDSvm1"{
   disk1_datastore    = "${module.SDSvm1_Disk1.disk1_datastore_id}"
   disk2_attach_path  = "${var.sdsvm1_disk2_attach_path_name}"
   disk2_datastore    = "${module.SDSvm1_Disk2.disk1_datastore_id}"
+  disk3_attach_path  = "${var.sdsvm1_disk3_attach_path_name}"
+  disk3_datastore    = "${module.SDSvm1_Disk3.disk1_datastore_id}"
+  disk4_attach_path  = "${var.sdsvm1_disk4_attach_path_name}"
+  disk4_datastore    = "${module.SDSvm1_Disk4.disk1_datastore_id}"
 }

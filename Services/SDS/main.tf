@@ -9,6 +9,10 @@ variable "disk1_attach_path"{}
 variable "disk1_datastore"{}
 variable "disk2_attach_path"{}
 variable "disk2_datastore"{}
+variable "disk3_attach_path"{}
+variable "disk3_datastore"{}
+variable "disk4_attach_path"{}
+variable "disk4_datastore"{}
 variable "vsphere_compute_cluster"{
   default = "Nehalem"}
 variable "vsphere_datacenter"{
@@ -104,6 +108,23 @@ resource "vsphere_virtual_machine" "SDSvm" {
     unit_number     = "3"
     datastore_id    = "${var.disk2_datastore}"
   }
+
+  disk {
+    label           = "disk3"
+    attach          = true
+    path            = "${var.disk3_attach_path}"
+    unit_number     = "4"
+    datastore_id    = "${var.disk3_datastore}"
+  }
+
+  disk {
+    label           = "disk4"
+    attach          = true
+    path            = "${var.disk4_attach_path}"
+    unit_number     = "5"
+    datastore_id    = "${var.disk4_datastore}"
+  }
+
 
   clone {
     template_uuid = "${data.vsphere_virtual_machine.template.id}"
