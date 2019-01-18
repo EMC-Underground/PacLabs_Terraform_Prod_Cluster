@@ -5,15 +5,16 @@ variable "ipv4_siopg1"{}
 variable "ipv4_siopg2"{}
 variable "root_password"{}
 variable "server_name"{}
-variable "disk_attach_path"{}
+variable "disk1_attach_path"{}
 variable "disk1_datastore"{}
+variable "disk2_attach_path"{}
+variable "disk2_datastore"{}
 variable "vsphere_compute_cluster"{
   default = "Nehalem"}
 variable "vsphere_datacenter"{
   default = "PacLabs"}
 variable "vsphere_resource_pool"{
-  default = "Nehalem/Resources"
-}
+  default = "Nehalem/Resources"}
 variable "domain"{
   default = "pac.lab"}
 
@@ -91,9 +92,17 @@ resource "vsphere_virtual_machine" "SDSvm" {
   disk {
     label           = "disk1"
     attach          = true
-    path            = "${var.disk_attach_path}"
+    path            = "${var.disk1_attach_path}"
     unit_number     = "2"
     datastore_id    = "${var.disk1_datastore}"
+  }
+
+  disk {
+    label           = "disk2"
+    attach          = true
+    path            = "${var.disk2_attach_path}"
+    unit_number     = "3"
+    datastore_id    = "${var.disk2_datastore}"
   }
 
   clone {

@@ -27,6 +27,17 @@ variable "sdsvm1_disk1_datastore"{}
 variable "sdsvm1_disk1_disk_size"{}
 variable "sdsvm1_disk1_attach_path_name"{}
 
+# SDSvm1 Disk 2 variables
+variable "sdsvm1_disk2_datastore"{}
+variable "sdsvm1_disk2_disk_size"{}
+variable "sdsvm1_disk2_attach_path_name"{}
+
+# SDSvm1 Disk 3 variables
+variable "sdsvm1_disk3_datastore"{}
+variable "sdsvm1_disk3_attach_path_name"{}
+variable "sdsvm1_disk3_disk_size"{}
+
+
 # SDSvm1 Server variables
 variable "sdsvm1_servers"{}
 variable "sdsvm1_datastore"{}
@@ -34,5 +45,5 @@ variable "sdsvm1_ipv4_344"{}
 variable "sdsvm1_ipv4_siopg1"{}
 variable "sdsvm1_ipv4_siopg2"{}
 variable "sdsvm1_server_name"{}
-variable "disk_attach_path"{}
+variable "disk1_attach_path"{}
 variable "disk1_datastore"{}

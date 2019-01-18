@@ -1,24 +1,23 @@
-variable "sdsvm1_disk1_attach_path_name"{}
-variable "sdsvm1_disk1_datastore"{}
-variable "sdsvm1_disk1_disk_size"{}
+variable "disk_attach_path_name"{}
+variable "disk_datastore"{}
+variable "disk_size"{}
 variable "vsphere_datacenter"{
-  default = "PacLabs"
-}
+  default = "PacLabs"}
 
 data "vsphere_datacenter" "dc" {
   name = "${var.vsphere_datacenter}"
 }
 
 data "vsphere_datastore" "datastore" {
-  name = "${var.sdsvm1_disk1_datastore}"
+  name = "${var.disk_datastore}"
   datacenter_id = "${data.vsphere_datacenter.dc.id}"
 }
 
 resource "vsphere_virtual_disk" "myDisk" {
-  size         = "${var.sdsvm1_disk1_disk_size}"
-  vmdk_path    = "${var.sdsvm1_disk1_attach_path_name}"
+  size         = "${var.disk_size}"
+  vmdk_path    = "${var.disk_attach_path_name}"
   datacenter   = "${var.vsphere_datacenter}"
-  datastore    = "${var.sdsvm1_disk1_datastore}"
+  datastore    = "${var.disk_datastore}"
   type         = "lazy"
 }
 
