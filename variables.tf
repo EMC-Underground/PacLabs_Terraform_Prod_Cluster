@@ -50,5 +50,3 @@ variable "sdsvm1_ipv4_344"{}
 variable "sdsvm1_ipv4_siopg1"{}
 variable "sdsvm1_ipv4_siopg2"{}
 variable "sdsvm1_server_name"{}
-variable "disk1_attach_path"{}
-variable "disk1_datastore"{}
