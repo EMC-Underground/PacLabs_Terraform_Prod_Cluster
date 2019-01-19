@@ -101,6 +101,89 @@ module "SDSvm3_Disk4"{
   disk_size               = "${var.sdsvm3_disk4_disk_size}"
 }
 
+module "SDSvm4_Disk1"{
+  source                  = "Services/CreateVMDK"
+  disk_datastore          = "${var.sdsvm4_disk1_datastore}"
+  disk_attach_path_name   = "${var.sdsvm4_disk1_attach_path_name}"
+  disk_size               = "${var.sdsvm4_disk1_disk_size}"
+}
+
+module "SDSvm4_Disk2"{
+  source                  = "Services/CreateVMDK"
+  disk_datastore          = "${var.sdsvm4_disk2_datastore}"
+  disk_attach_path_name   = "${var.sdsvm4_disk2_attach_path_name}"
+  disk_size               = "${var.sdsvm4_disk2_disk_size}"
+}
+
+module "SDSvm4_Disk3"{
+  source                  = "Services/CreateVMDK"
+  disk_datastore          = "${var.sdsvm4_disk3_datastore}"
+  disk_attach_path_name   = "${var.sdsvm4_disk3_attach_path_name}"
+  disk_size               = "${var.sdsvm4_disk3_disk_size}"
+}
+
+module "SDSvm4_Disk4"{
+  source                  = "Services/CreateVMDK"
+  disk_datastore          = "${var.sdsvm4_disk4_datastore}"
+  disk_attach_path_name   = "${var.sdsvm4_disk4_attach_path_name}"
+  disk_size               = "${var.sdsvm4_disk4_disk_size}"
+}
+
+module "SDSvm5_Disk1"{
+  source                  = "Services/CreateVMDK"
+  disk_datastore          = "${var.sdsvm5_disk1_datastore}"
+  disk_attach_path_name   = "${var.sdsvm5_disk1_attach_path_name}"
+  disk_size               = "${var.sdsvm5_disk1_disk_size}"
+}
+
+module "SDSvm5_Disk2"{
+  source                  = "Services/CreateVMDK"
+  disk_datastore          = "${var.sdsvm5_disk2_datastore}"
+  disk_attach_path_name   = "${var.sdsvm5_disk2_attach_path_name}"
+  disk_size               = "${var.sdsvm5_disk2_disk_size}"
+}
+
+module "SDSvm5_Disk3"{
+  source                  = "Services/CreateVMDK"
+  disk_datastore          = "${var.sdsvm5_disk3_datastore}"
+  disk_attach_path_name   = "${var.sdsvm5_disk3_attach_path_name}"
+  disk_size               = "${var.sdsvm5_disk3_disk_size}"
+}
+
+module "SDSvm5_Disk4"{
+  source                  = "Services/CreateVMDK"
+  disk_datastore          = "${var.sdsvm5_disk4_datastore}"
+  disk_attach_path_name   = "${var.sdsvm5_disk4_attach_path_name}"
+  disk_size               = "${var.sdsvm5_disk4_disk_size}"
+}
+
+module "SDSvm6_Disk1"{
+  source                  = "Services/CreateVMDK"
+  disk_datastore          = "${var.sdsvm6_disk1_datastore}"
+  disk_attach_path_name   = "${var.sdsvm6_disk1_attach_path_name}"
+  disk_size               = "${var.sdsvm6_disk1_disk_size}"
+}
+
+module "SDSvm6_Disk2"{
+  source                  = "Services/CreateVMDK"
+  disk_datastore          = "${var.sdsvm6_disk2_datastore}"
+  disk_attach_path_name   = "${var.sdsvm6_disk2_attach_path_name}"
+  disk_size               = "${var.sdsvm6_disk2_disk_size}"
+}
+
+module "SDSvm6_Disk3"{
+  source                  = "Services/CreateVMDK"
+  disk_datastore          = "${var.sdsvm6_disk3_datastore}"
+  disk_attach_path_name   = "${var.sdsvm6_disk3_attach_path_name}"
+  disk_size               = "${var.sdsvm6_disk3_disk_size}"
+}
+
+module "SDSvm6_Disk4"{
+  source                  = "Services/CreateVMDK"
+  disk_datastore          = "${var.sdsvm6_disk4_datastore}"
+  disk_attach_path_name   = "${var.sdsvm6_disk4_attach_path_name}"
+  disk_size               = "${var.sdsvm6_disk4_disk_size}"
+}
 
 
 module "SDSvm1"{
@@ -158,4 +241,61 @@ module "SDSvm3"{
   disk3_datastore    = "${module.SDSvm3_Disk3.disk1_datastore_id}"
   disk4_attach_path  = "${var.sdsvm3_disk4_attach_path_name}"
   disk4_datastore    = "${module.SDSvm3_Disk4.disk1_datastore_id}"
+}
+
+module "SDSvm4"{
+  source             = "Services/SDS"
+  root_password      = "${var.root_password}"
+  servers            = "${var.sdsvm4_servers}"
+  datastore          = "${var.sdsvm4_datastore}"
+  ipv4_344           = "${var.sdsvm4_ipv4_344}"
+  ipv4_siopg1        = "${var.sdsvm4_ipv4_siopg1}"
+  ipv4_siopg2        = "${var.sdsvm4_ipv4_siopg2}"
+  server_name        = "${var.sdsvm4_server_name}"
+  disk1_attach_path  = "${var.sdsvm4_disk1_attach_path_name}"
+  disk1_datastore    = "${module.SDSvm4_Disk1.disk1_datastore_id}"
+  disk2_attach_path  = "${var.sdsvm4_disk2_attach_path_name}"
+  disk2_datastore    = "${module.SDSvm4_Disk2.disk1_datastore_id}"
+  disk3_attach_path  = "${var.sdsvm4_disk3_attach_path_name}"
+  disk3_datastore    = "${module.SDSvm4_Disk3.disk1_datastore_id}"
+  disk4_attach_path  = "${var.sdsvm4_disk4_attach_path_name}"
+  disk4_datastore    = "${module.SDSvm4_Disk4.disk1_datastore_id}"
+}
+
+module "SDSvm5"{
+  source             = "Services/SDS"
+  root_password      = "${var.root_password}"
+  servers            = "${var.sdsvm5_servers}"
+  datastore          = "${var.sdsvm5_datastore}"
+  ipv4_344           = "${var.sdsvm5_ipv4_344}"
+  ipv4_siopg1        = "${var.sdsvm5_ipv4_siopg1}"
+  ipv4_siopg2        = "${var.sdsvm5_ipv4_siopg2}"
+  server_name        = "${var.sdsvm5_server_name}"
+  disk1_attach_path  = "${var.sdsvm5_disk1_attach_path_name}"
+  disk1_datastore    = "${module.SDSvm5_Disk1.disk1_datastore_id}"
+  disk2_attach_path  = "${var.sdsvm5_disk2_attach_path_name}"
+  disk2_datastore    = "${module.SDSvm5_Disk2.disk1_datastore_id}"
+  disk3_attach_path  = "${var.sdsvm5_disk3_attach_path_name}"
+  disk3_datastore    = "${module.SDSvm5_Disk3.disk1_datastore_id}"
+  disk4_attach_path  = "${var.sdsvm5_disk4_attach_path_name}"
+  disk4_datastore    = "${module.SDSvm5_Disk4.disk1_datastore_id}"
+}
+
+module "SDSvm6"{
+  source             = "Services/SDS"
+  root_password      = "${var.root_password}"
+  servers            = "${var.sdsvm6_servers}"
+  datastore          = "${var.sdsvm6_datastore}"
+  ipv4_344           = "${var.sdsvm6_ipv4_344}"
+  ipv4_siopg1        = "${var.sdsvm6_ipv4_siopg1}"
+  ipv4_siopg2        = "${var.sdsvm6_ipv4_siopg2}"
+  server_name        = "${var.sdsvm6_server_name}"
+  disk1_attach_path  = "${var.sdsvm6_disk1_attach_path_name}"
+  disk1_datastore    = "${module.SDSvm6_Disk1.disk1_datastore_id}"
+  disk2_attach_path  = "${var.sdsvm6_disk2_attach_path_name}"
+  disk2_datastore    = "${module.SDSvm6_Disk2.disk1_datastore_id}"
+  disk3_attach_path  = "${var.sdsvm6_disk3_attach_path_name}"
+  disk3_datastore    = "${module.SDSvm6_Disk3.disk1_datastore_id}"
+  disk4_attach_path  = "${var.sdsvm6_disk4_attach_path_name}"
+  disk4_datastore    = "${module.SDSvm6_Disk4.disk1_datastore_id}"
 }

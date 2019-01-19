@@ -82,6 +82,66 @@ variable "sdsvm3_disk4_datastore"{}
 variable "sdsvm3_disk4_disk_size"{}
 variable "sdsvm3_disk4_attach_path_name"{}
 
+# SDSvm4 Disk 1 variables
+variable "sdsvm4_disk1_datastore"{}
+variable "sdsvm4_disk1_disk_size"{}
+variable "sdsvm4_disk1_attach_path_name"{}
+
+# SDSvm4 Disk 2 variables
+variable "sdsvm4_disk2_datastore"{}
+variable "sdsvm4_disk2_disk_size"{}
+variable "sdsvm4_disk2_attach_path_name"{}
+
+# SDSvm4 Disk 3 variables
+variable "sdsvm4_disk3_datastore"{}
+variable "sdsvm4_disk3_disk_size"{}
+variable "sdsvm4_disk3_attach_path_name"{}
+
+# SDSvm4 Disk 4 variables
+variable "sdsvm4_disk4_datastore"{}
+variable "sdsvm4_disk4_disk_size"{}
+variable "sdsvm4_disk4_attach_path_name"{}
+
+# SDSvm5 Disk 1 variables
+variable "sdsvm5_disk1_datastore"{}
+variable "sdsvm5_disk1_disk_size"{}
+variable "sdsvm5_disk1_attach_path_name"{}
+
+# SDSvm5 Disk 2 variables
+variable "sdsvm5_disk2_datastore"{}
+variable "sdsvm5_disk2_disk_size"{}
+variable "sdsvm5_disk2_attach_path_name"{}
+
+# SDSvm5 Disk 3 variables
+variable "sdsvm5_disk3_datastore"{}
+variable "sdsvm5_disk3_disk_size"{}
+variable "sdsvm5_disk3_attach_path_name"{}
+
+# SDSvm5 Disk 4 variables
+variable "sdsvm5_disk4_datastore"{}
+variable "sdsvm5_disk4_disk_size"{}
+variable "sdsvm5_disk4_attach_path_name"{}
+
+# SDSvm6 Disk 1 variables
+variable "sdsvm6_disk1_datastore"{}
+variable "sdsvm6_disk1_disk_size"{}
+variable "sdsvm6_disk1_attach_path_name"{}
+
+# SDSvm6 Disk 2 variables
+variable "sdsvm6_disk2_datastore"{}
+variable "sdsvm6_disk2_disk_size"{}
+variable "sdsvm6_disk2_attach_path_name"{}
+
+# SDSvm6 Disk 3 variables
+variable "sdsvm6_disk3_datastore"{}
+variable "sdsvm6_disk3_disk_size"{}
+variable "sdsvm6_disk3_attach_path_name"{}
+
+# SDSvm6 Disk 4 variables
+variable "sdsvm6_disk4_datastore"{}
+variable "sdsvm6_disk4_disk_size"{}
+variable "sdsvm6_disk4_attach_path_name"{}
+
 # SDSvm1 Server variables
 variable "sdsvm1_servers"{}
 variable "sdsvm1_datastore"{}
@@ -105,3 +165,27 @@ variable "sdsvm3_ipv4_344"{}
 variable "sdsvm3_ipv4_siopg1"{}
 variable "sdsvm3_ipv4_siopg2"{}
 variable "sdsvm3_server_name"{}
+
+# SDSvm4 Server variables
+variable "sdsvm4_servers"{}
+variable "sdsvm4_datastore"{}
+variable "sdsvm4_ipv4_344"{}
+variable "sdsvm4_ipv4_siopg1"{}
+variable "sdsvm4_ipv4_siopg2"{}
+variable "sdsvm4_server_name"{}
+
+# SDSvm5 Server variables
+variable "sdsvm5_servers"{}
+variable "sdsvm5_datastore"{}
+variable "sdsvm5_ipv4_344"{}
+variable "sdsvm5_ipv4_siopg1"{}
+variable "sdsvm5_ipv4_siopg2"{}
+variable "sdsvm5_server_name"{}
+
+# SDSvm6 Server variables
+variable "sdsvm6_servers"{}
+variable "sdsvm6_datastore"{}
+variable "sdsvm6_ipv4_344"{}
+variable "sdsvm6_ipv4_siopg1"{}
+variable "sdsvm6_ipv4_siopg2"{}
+variable "sdsvm6_server_name"{}
