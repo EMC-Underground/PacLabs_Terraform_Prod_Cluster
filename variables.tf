@@ -10,8 +10,7 @@ variable "domain"{
   default = "pac.lab"}
 variable "vsphere_compute_cluster"{}
 variable "vsphere_datacenter"{
-  default = "PacLabs"
-}
+  default = "PacLabs"}
 variable "vsphere_resource_pool"{}
 
 # Gateway Server Variables
