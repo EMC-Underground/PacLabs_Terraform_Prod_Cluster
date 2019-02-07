@@ -122,23 +122,26 @@ variable "sdsvm5_disk4_disk_size"{}
 variable "sdsvm5_disk4_attach_path_name"{}
 
 # SDSvm6 Disk 1 variables
-variable "sdsvm6_disk1_eagerzero_datastore"{}
-variable "sdsvm6_disk1_eagerzero_disk_size"{}
-variable "sdsvm6_disk1_eagerzero_attach_path_name"{}
-
-variable "sdsvm6_disk3_eagerzero_datastore"{}
-variable "sdsvm6_disk3_eagerzero_disk_size"{}
-variable "sdsvm6_disk3_eagerzero_attach_path_name"{}
-
-# SDSvm6 Disk 4 variables
-variable "sdsvm6_disk4_eagerzero_datastore"{}
-variable "sdsvm6_disk4_eagerzero_disk_size"{}
-variable "sdsvm6_disk4_eagerzero_attach_path_name"{}
+variable "sdsvm6_disk1_datastore"{}
+variable "sdsvm6_disk1_disk_size"{}
+variable "sdsvm6_disk1_attach_path_name"{}
 
 # SDSvm6 Disk 2 variables
-variable "sdsvm6_disk2_eagerzero_datastore"{}
-variable "sdsvm6_disk2_eagerzero_disk_size"{}
-variable "sdsvm6_disk2_eagerzero_attach_path_name"{}
+variable "sdsvm6_disk2_datastore"{}
+variable "sdsvm6_disk2_disk_size"{}
+variable "sdsvm6_disk2_attach_path_name"{}
+
+# SDSvm6 Disk 3 variables
+variable "sdsvm6_disk3_datastore"{}
+variable "sdsvm6_disk3_disk_size"{}
+variable "sdsvm6_disk3_attach_path_name"{}
+
+# SDSvm6 Disk 4 variables
+variable "sdsvm6_disk4_datastore"{}
+variable "sdsvm6_disk4_disk_size"{}
+variable "sdsvm6_disk4_attach_path_name"{}
+
+
 
 # SDSvm1 Server variables
 variable "sdsvm1_servers"{}

@@ -114,26 +114,26 @@ sdsvm5_disk4_datastore        = "PacLabs005-SIO-4"
 sdsvm5_disk4_disk_size        = "900"
 sdsvm5_disk4_attach_path_name = "SDSvm5_Disk4.vmdk"
 
-
 # SDSvm6 Disk 1 variables
-sdsvm6_disk1_eagerzero_datastore        = "PacLabs006-SIO-1"
-sdsvm6_disk1_eagerzero_disk_size        = "900"
-sdsvm6_disk1_eagerzero_attach_path_name = "SDSvm6_Disk1.vmdk"
+sdsvm6_disk1_datastore        = "PacLabs006-SIO-1"
+sdsvm6_disk1_disk_size        = "900"
+sdsvm6_disk1_attach_path_name = "SDSvm6_Disk1.vmdk"
 
 # SDSvm6 Disk 2 variables
-sdsvm6_disk2_eagerzero_datastore        = "PacLabs006-SIO-2"
-sdsvm6_disk2_eagerzero_disk_size        = "900"
-sdsvm6_disk2_eagerzero_attach_path_name = "SDSvm6_Disk2.vmdk"
+sdsvm6_disk2_datastore        = "PacLabs006-SIO-2"
+sdsvm6_disk2_disk_size        = "900"
+sdsvm6_disk2_attach_path_name = "SDSvm6_Disk2.vmdk"
 
 # SDSvm6 Disk 3 variables
-sdsvm6_disk3_eagerzero_datastore        = "PacLabs006-SIO-3"
-sdsvm6_disk3_eagerzero_disk_size        = "900"
-sdsvm6_disk3_eagerzero_attach_path_name = "SDSvm6_Disk3.vmdk"
+sdsvm6_disk3_datastore        = "PacLabs006-SIO-3"
+sdsvm6_disk3_disk_size        = "900"
+sdsvm6_disk3_attach_path_name = "SDSvm6_Disk3.vmdk"
 
 # SDSvm6 Disk 4 variables
-sdsvm6_disk4_eagerzero_datastore        = "PacLabs006-SIO-4"
-sdsvm6_disk4_eagerzero_disk_size        = "900"
-sdsvm6_disk4_eagerzero_attach_path_name = "SDSvm6_Disk4.vmdk"
+sdsvm6_disk4_datastore        = "PacLabs006-SIO-4"
+sdsvm6_disk4_disk_size        = "900"
+sdsvm6_disk4_attach_path_name = "SDSvm6_Disk4.vmdk"
+
 
 
 # SDSvm1 Server Variables
