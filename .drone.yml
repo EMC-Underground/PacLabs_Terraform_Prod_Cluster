@@ -1,9 +1,12 @@
 kind: pipeline
 name: terraform
 
+workspace:
+  base: /go
+  path: src/github.com/jmccann/drone-terraform
+
 steps:
 - name: build
   image: jmccann/drone-terraform:1
   commands:
   - plan
-  
