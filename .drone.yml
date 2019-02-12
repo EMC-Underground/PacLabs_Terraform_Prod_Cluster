@@ -1,10 +1,9 @@
-pipeline:
-  terraform:
-    image: jmccann/drone-terraform:1
-    plan: false
+kind: pipeline
+name: terraform
 
-
-deploy:
-  terraform:
-    image: jmccann/drone-terraform:1
-    plan: false
+steps:
+- name: build
+  image: jmccann/drone-terraform:1
+  commands:
+  - plan
+  
