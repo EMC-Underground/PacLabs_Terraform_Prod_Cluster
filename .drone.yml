@@ -1,7 +1,13 @@
-deploy:
-  terraform:
-    plan: false
-
+pipeline:
+  build:
+    image: johnrengelman/terraform-spec:0.8.8-1
+    commands:
+      - bundle exec kitchen test --destroy=always --color
+    environment:
+      - USER=drone
+    when:
+      branch: [ master, feature/* ]
+      event: [ push, pull_request ]
     vars:
       var.root_password: root_password
       var.vsphere_password: vsphere_password
