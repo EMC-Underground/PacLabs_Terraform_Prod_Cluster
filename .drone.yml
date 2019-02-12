@@ -1,9 +1,9 @@
-kind: pipeline
-name: terraform
-
 workspace:
   base: /go
-  path: src/github.com/jmccann/drone-terraform
+  path: src/github.com/drone-plugins/drone-terraform
+
+kind: pipeline
+name: terraform
 
 steps:
 - name: build
