@@ -1,0 +1,7 @@
+deploy:
+  terraform:
+    plan: false
+
+    vars:
+      var.root_password: root_password
+      var.vsphere_password: vsphere_password
