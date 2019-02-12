@@ -43,7 +43,7 @@ data "vsphere_virtual_machine" "template" {
 
 resource "vsphere_virtual_machine" "Docker_Hostvm" {
   count            = "${var.servers}"
-  name             = "terraform-DockerHost${count.index}"
+  name             = "terraform-DockerHost0${count.index}"
   resource_pool_id = "${data.vsphere_compute_cluster.cluster.resource_pool_id}"
   datastore_id     = "${data.vsphere_datastore.datastore.id}"
   num_cpus         = 2
@@ -78,22 +78,22 @@ resource "vsphere_virtual_machine" "Docker_Hostvm" {
 
     customize {
       linux_options {
-        host_name = "terraform-DockerHost${count.index}"
+        host_name = "terraform-DockerHost0${count.index}"
         domain    = "pac.lab"
       }
 
      network_interface {
-        ipv4_address = "10.237.198.19${count.index}"
+        ipv4_address = "10.237.198.13${count.index}"
         ipv4_netmask = 24
       }
 
       network_interface {
-         ipv4_address = "192.168.10.22${count.index}"
+         ipv4_address = "192.168.10.23${count.index}"
          ipv4_netmask = 24
       }
 
       network_interface {
-         ipv4_address = "192.168.11.22${count.index}"
+         ipv4_address = "192.168.11.23${count.index}"
          ipv4_netmask = 24
       }
       ipv4_gateway = "10.237.198.1"

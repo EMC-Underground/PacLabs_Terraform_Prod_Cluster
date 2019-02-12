@@ -301,3 +301,10 @@ module "SDSvm6"{
   disk4_attach_path  = "${var.sdsvm6_disk4_attach_path_name}"
   disk4_datastore    = "${module.SDSvm6_Disk4.disk1_datastore_id}"
 }
+
+module "Docker_Hostvm"{
+  source       = "Services/Docker_Host"
+  servers      = "1"
+  datastore    = "SIO_ds01"
+  root_password = "${var.root_password}"
+}
